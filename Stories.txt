@@ -1,0 +1,93 @@
+Story 1: As a player, I want to create a character:
+
+- Create an abstract class for Menus, which will have a run function that returns another menu, a display function and an input management function which is run after every display
+- Create a subclass of Menu for the main menu and initialize it in Main
+- We then call run on this menu and assign to the variable the new menu. This is placed in a loop which ends when the menu is null
+- display displays the main menu
+- In the input manager, handle inputs for starting and continuing a game
+- If you continue a game, return the exploration menu from map.txt and the character loaded from characters.txt. If it is empty, print an error
+- If you start a new game, the character creator builder pattern is initialized
+- This builder pattern builds the player via displaying successive menus and returns it
+- The player will have parameters for the name, the type, the stats, current HP, current magic, spells, the items, the zone, the position in the zone, and the explored zones
+- Then, the input manager returns the exploration menu with the generated character. map.txt will be generated from defaultmap.txt.
+
+Story 2 : As a player, I want to explore:
+
+- We create an class called Zone. the way it works is that each Zone is a 9x9 array that the player can explore
+- Each Zone is initialized via saved data from a corresponding .txt file, the number of which is passed through the constructor
+- Each Zone has a set of Zones it is linked to. This is described by a HashMap that links a tile position to a number, and to the corresponding tile position in the next zone. This is in the map data
+- An Exploration Menu displays the current Zone, and the position of the player in it. It does this through the temporary map and the player's position and zone
+- The input manager manages directional inputs and checks if the movement is possible. It then updates the player's location.
+- If the player steps on a tile that is present in the HashMap, it will warp them to the corresponding zone on the corresponding tile.
+- The Exploration Menu should return the next one the input is handled, thus automatically updating the display
+- It should also manage inputs for the bag, the map, the player, and saving. For the map, the explored zones are saved within the player
+- If the player picks up an object, this is saved in the corresponding zone .txt file
+
+Story 3: As a player, I want to gain experience through fighting
+- Every time the player takes a step, they have a set % chance to find a random encounter
+- The random encounter is selected randomly from a list. We create a Creature abstract class to define the creature
+- Then, the battle menu is returned
+- The Battle Menu has you select a move from a list, or an item
+- Once you select a move, the opposing enemy hits you back. The new Battle m enu is returned and displayed
+- If the opposing enemy drops to 0 HP, you win the fight and go back to full health. The Exploration menu is displayed and EXP is gained
+- EXP and damage dealt are based on a formula
+- Otherwise, you lose, and the program is closed
+- We create a special case for the Legendary Dragon, which, if defeated, wins you the game, which displays an Ending Menu, and closes the program
+- the zone files are deleted when the program is closed.
+
+Story 4: As a player, i want to save my progress
+- There are 2 save data files : map.txt and player.txt. There is also an initial save data file, defaultmap.txt, which is the default map
+- When you save, map.txt is replaced by a concatenation of all the zone.txt files, which look like this:
+11 11
+###########
+#.........#
+#.........#
+#.........#
+#.........#
+...........
+#.........#
+#.........#
+#.........#
+#.........#
+###########
+
+5 0 0 5 10
+5 10 2 5 0
+
+This means that if the player steps on tile (5, 0), they will be sent to tile (5, 10) of zone 0
+
+- The data from the player is also loaded into player.txt and looks like this:
+
+Timothy
+Lucky
+1
+5
+7
+8
+9
+4
+6
+3
+500
+Strong Attack
+Risky Attack
+Magic Healing
+Magic Sword
+15
+14
+4
+9
+2
+1 5 4
+
+This means that the player is called "Timothy the Lucky Wizard", is level 1, its stats are :
+
+HP: 5
+Magic: 6
+Attack: 7
+Defense: 8
+Luck: 9
+
+has current HP of 4, current magic of 3, has for spells Strong Attack, Risky Attack, Magic Healing and Magic Sword, has 500 experience, 15 health potions and 14 magic potions, is in zone 4 on tile (9, 2), and has discovered zones 1, 5 and 4
+
+- When you load, all the data is loaded automatically from savedMap.txt and player.txt

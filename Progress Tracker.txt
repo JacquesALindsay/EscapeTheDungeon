@@ -1,0 +1,61 @@
+Day 1:
+
+- Set up with a basic idea for what I want to do. Put them in a design document
+- Made a list of things I want to unit test
+- Marked things which seemed optional and which I may not have the time to do as optional
+- Added things I know I will not have the time to do, but want to consider for the sake of extendability
+
+Day 2:
+
+- Created the README.txt file
+- Created a skeleton for each story
+
+Day 3:
+
+- Worked on Story 1
+- Struggled with input stream
+- Created the display and the new / continue
+- Created the characters and exploration menu
+- Created menus for name and attribute
+- Created tests for the creation of the exploration menu
+- Created the map
+- Made the builder pattern for player, made it applicable to creatures too
+- Created tests for every step of the character creation
+
+Day 4:
+
+- Worked on Story 2
+- Allowed the character to be displayed
+- Allowed the player character to be read from a file
+- Implemented zones and positions
+- Allowed the exploration menu to read from a file and display a zone
+- Tested the zone display
+- Tested the item and map displays
+- Made it so that the player's data can be loaded in a file for the
+- Allowed for usage of items and tested it
+
+Day 5:
+
+- Implemented movement from one tile to another and tested it
+- Implemented movement from one zone to another and tested it
+- Implemented chest collection and tested it
+- Made the new explored zones update the discovered zone list
+- Started working on Story 3
+- Set the random encounter rate
+- Created different creatures to fight
+- Created the menus for using moves in battle
+- Designed the damage calculation
+- Created menus for winning and losing
+- Added a special case for the dragon
+- Added an option for the player to exit
+
+Day 6:
+
+- Added unit tests for all the battle menus
+- Started working on Story 4. the saving and loading of the map was already implemented since the data is taken directly from the save data during exploration
+- Created SaveUtils for saving and loading and moved the map generation there
+- Implemented functions that save and load the player into a file, which are called when you save and continue, respectively
+- Created unit tests to test proper saving and loading of the player's data
+- Made it so that temporary files get deleted when the player exits, loses, or wins the game
+- Added instructions to build and run
+- Made the project work on the command line by copying and pasting the save data in the production folder

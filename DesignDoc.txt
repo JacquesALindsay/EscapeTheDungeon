@@ -1,0 +1,138 @@
+First, you go to the character creator
+Your character has stats:
+HP (the amount of health you have)
+Attack (strength of a move)
+Defense (the amount of magic you have)
+Luck (how lucky you are)
+Magic (your magic power)
+
+Your character has a level. They start at level 1
+
+Choose your attribute:
+Healthy
+Wise
+Strong
+Careful
+Lucky
+Legendary (hidden)
+
+Then, you get to choose 2 attacking spells:
+- Neutral Attack (x2 damage, 1 MP cost)
+- Strong Attack (x4 damage, 2 MP cost)
+- Risky Attack (x4, double chance to miss)
+and 2 supporting spells:
+- Magic Healing (restores all of your health, 2 MP Cost)
+- Magic Sword (doubles your attack power, 2 MP cost)
+- Magic Shield (doubles your defense power, 2 MP cost)
+Supporting spells cannot miss
+
+
+Then, you get to choose 10 out of the following items:
+- Health Potion (restores all your health)
+- Magic Potion (restores all your stamina)
+
+You crawl across a dungeon. It is set
+
+You can find Healing Potions and Magic Potions in chests (C)
+
+There are random encounters that give you experience
+
+Attack formula is as follows:
+- Power of move * attack / defense (min 1)
+Precision formula is as follows:
+ - (Your luck / opponent's luck) * move precision
+
+You can pull up a menu. This allows you to access:
+- items
+- stats
+- the map
+- save
+
+In battle, you can access the items. You can also run, which is a move with 50% luck
+
+Your save data is saved in a .txt file, which is set to not have may read or write access. It will save the characters's zone, location, stats, experience and spells
+Run out of HP or magic power and you lose and have to go back to the previous save file
+
+The enemies are:
+- Healthy Blob
+Level: 1
+HP: 5
+Attack: 5
+Defense: 10
+Luck: 5
+Attack (x1 damage)
+- Strong Blob
+Level: 1
+HP: 5
+Attack: 10
+Defense: 5
+Luck: 5
+Attack (x1 damage)
+- Careful Blob
+Level: 1
+HP: 5
+Attack: 5
+Defense: 10
+Luck: 5
+Attack (x1 damage)
+- Lucky Blob
+Level: 1
+HP: 5
+Attack: 5
+Defense: 5
+Luck: 10
+Attack (x1 damage)
+- Legendary Dragon
+Level: 5
+HP: 10
+Attack: 10
+Defense: 10
+Luck: 10
+Attack (x2 damage)
+
+Unit tests:
+
+- test main menu
+- test character creation
+- test movement
+- test items
+- test item collection
+- test map
+- test random encounter
+- test damage
+- text other moves
+- test HP
+- test attack
+- test defense
+- test luck
+- test magic
+- test attack boosts
+- test defense boosts
+- test health recovery
+- test magic recovery
+- test kills
+- test win
+- test loss
+- test saving
+- test endings
+
+For future plans:
+- We want to go up a level every time 100 EXP is gained
+- We want to distribute stat bonuses when you level up
+- We want to allow the user to switch spells every time they go up a level
+- We want to add more enemies with higher levels
+- We want to make chests appear procedurally
+- We want to make enemies occur more frequently around chests
+- We want to add walls to our dungeon to navigate around
+- We want to generate those walls procedurally
+- We want to allow cancelling during the character creator
+- We want to secure our save file
+- We want to change the format of the map.txt file to by removing the indicator for which zone is linked with which, and instead, giving the full map of the dungeon and allowing the exploration menu to split it up
+- We want to be able to save multiple save files
+- We want the unit tests to not need their own files
+- We want to print an error message if an input is invalid
+- We want to create ascii art
+- We want to allow the user to cancel selections
+- We want to show the MP cost of moves
+- We want to tst the run menu somehow
+- We want to generalize unit tests
